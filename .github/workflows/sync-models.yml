@@ -1,0 +1,18 @@
+# .github/workflows/sync-models.yml
+name: Sync Models from Training Repo
+
+on:
+  schedule:
+    - cron: "30 19 * * *"  # 30 minutes after training completes
+  workflow_dispatch:
+  repository_dispatch:
+    types: [model-trained]
+
+jobs:
+  sync-models:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Streamlit Cloud Redeployment
+        run: |
+          echo "Models synced at $(date)"
+          # Add any deployment triggers here
