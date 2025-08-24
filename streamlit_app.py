@@ -5,7 +5,7 @@ import os
 from io import BytesIO
 
 # Configuration
-MODEL_RELEASE_URL = "https://github.com/your-username/your-models-repo/releases/latest/download/aqi_current_model.pkl"
+MODEL_RELEASE_URL = "https://github.com/Ghadanur/aqi-predictor/releases/latest/download/aqi_current_model.pkl"
 
 @st.cache_resource(show_spinner="Downloading prediction model...")
 def load_model_from_url(url):
